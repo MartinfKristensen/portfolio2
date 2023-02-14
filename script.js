@@ -75,3 +75,23 @@ document.addEventListener("scroll", () => {
     nav_projects.style.color = "#000000";
   }
 });
+
+let images = document.querySelectorAll("img");
+
+function fadeInImg() {
+  let image = images[Math.floor(Math.random() * images.length)];
+  image.style.transition = "all 1s";
+  image.style.opacity = 1;
+  setTimeout(() => {
+    image.style.opacity = 0;
+    Timer();
+  }, 3500);
+}
+
+function Timer() {
+  setTimeout(() => {
+    fadeInImg();
+  }, 2000);
+}
+
+fadeInImg();
